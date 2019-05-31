@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="//placehold.jp/ff0000/ffffff/70x70.jpg?text=TK" />
+      <square150x150logo src="//placehold.jp/ff0000/ffffff/150x150.jpg?text=TK" />
+      <wide310x150logo src="//placehold.jp/ff0000/ffffff/310x150.jpg?text=TK" />
+      <square310x310logo src="//placehold.jp/ff0000/ffffff/310x310.jpg?text=TK" />
+      <TileColor>#e1fffe</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>

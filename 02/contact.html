@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="canonical" href="">
+  <meta name="description" content="">
+  <title>お問い合わせ</title>
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no, email=no, address=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png" href="//placehold.jp/30/ff9100/000000/64x64.jpg?text=TK">
+  <meta name="application-name" content="ポートフォリオ">
+  <link rel="mask-icon" href="//placehold.jp/30/ff9100/000000/64x64.jpg?text=TK" color="#ff9100">
+  <meta name="theme-color" content="#fe9211">
+</head>
+<body>
+  <div class="container-fluid">
+
+    <nav id="top-nav" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <a class="navbar-brand" href="index.html"><h1>ポートフォリオ</h1></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="about.html">概要</a>
+          <li class="nav-item"><a class="nav-link" href="contact.html">お問い合わせ</a>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <main class="col-md-12 col-lg-9">
+
+        <nav aria-label="パンくずリスト">
+          <ol class="breadcrumb mb-1">
+            <li class="breadcrumb-item"><a href="index.html">ホーム</a>
+            <li class="breadcrumb-item active" aria-current="page">お問い合わせ
+          </ol>
+        </nav>
+
+        <h2>お問い合わせ</h2>
+
+        <div class="row">
+          <div class="contact-form">
+            <!-- name -->
+            <div class="form__label">
+              <label><span>名前</span>
+                <input type="text" name="name" class="col-md-11 col-sm-12" placeholder="名前を入力して下さい" required>
+                <p id="reqName"></p>
+              </label>
+            </div>
+            <!-- email -->
+            <div class="form__label">
+              <label><span>E-Mail</span>
+                <input type="email" name="email" class="col-md-11 col-sm-12" placeholder="Mailアドレスを入力して下さい">
+              </label>
+            </div>
+            <!-- select -->
+            <div class="form__label">
+              <label><span>エリア</span>
+                <select name="area" class="col-md-11 col-sm-12">
+                  <option value="関東">関東</option>
+                  <option value="関西">関西</option>
+                  <option value="四国">四国</option>
+                  <option value="九州">九州</option>
+                </select>
+              </label>
+            </div>
+            <!-- gender -->
+            <div class="form__label">
+              <span class="label-gender">性別</span>
+              <label class="label-gender"><input type="radio" name="gender" value="man" id="man" checked="checked">男</label>
+              <label class="label-gender"><input type="radio" name="gender" value="woman" id="woman">女</label>
+            </div>
+            <!-- known by -->
+            <div class="form__label">
+              <span class="label-knownby">何で知った？</span>
+              <label class="label-knownby"><input type="checkbox" name="knownby1" value="web" id="web">Web</label>
+              <label class="label-knownby"><input type="checkbox" name="knownby2" value="magazine" id="magazine">雑誌</label>
+            </div>
+            <!-- comment -->
+            <div class="form__label">
+              <label><span>コメント</span>
+                <textarea name="comment" rows=3 class="col-md-11 col-sm-12" placeholder="100文字までです。" required></textarea>
+                <p id="reqCom"></p>
+              </label>
+            </div>
+            <!-- submit -->
+            <div class="text-center">
+              <button type="submit" class="m-auto btn btn-primary" name="btn">Submit</button>
+            </div>
+          </div>
+
+            <div class="modal" id="myModal">
+              <form action="#">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h3>送信確認</h3>
+                      <button type="button" class="close">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <p id="name"></p>
+                      <p id="email"></p>
+                      <p id="area"></p>
+                      <p id="gender"></p>
+                      <p id="known"></p>
+                      <p id="comment"></p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="close btn-danger">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+        </div>
+      </main>
+      <aside class="col-md-12 col-lg-3 hidden-print">
+        <h3>更新履歴</h3>
+        <ul>
+          <li>index.html作成しました
+          <li>about.html作成しました
+          <li>contact.html作成しました
+          <li>rwdでクエリを切っていません
+        </ul>
+      </aside>
+    </div>
+    <footer>
+      <noscript>
+        <p>このページはJavaScriptを使用しています。</p>
+        <p>ご使用中のブラウザはJavaScriptが無効になっているか、JavaScriptに対応していません。</p>
+        <p>JavaScriptを有効にするか、JavaScriptが使用可能なブラウザでアクセスして下さい。</p>
+      </noscript>
+      <p class="text-center"><span>&copy;</span><span>20xx</span><span>小西高幸</span></p>
+    </footer>
+  </div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
+<script src="navigator.js"></script>
+</body>
+</html>
