@@ -1,7 +1,7 @@
 # ポートフォリオ02
 
 ## URL
-[https://takayuki-k.github.io/sample/sample02/](https://takayuki-k.github.io/sample/sample02/)
+[https://takayuki-k.github.io/sample/02/](https://takayuki-k.github.io/sample/02/)  
 
 ## 説明
 html/css/jQueryのポートフォリオです。  
