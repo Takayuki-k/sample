@@ -2,13 +2,11 @@
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('./service-worker.js')
-    .then(registration => {
+    .then(function(registration) {
       // 登録成功
-      registration.onupdatefound = function() {
-        registration.update();
-      }
-    })
-    .catch(err => {
-      // 登録失敗
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+    // 登録失敗 :(
+    console.log('ServiceWorker registration failed: ', err);
   });
 }

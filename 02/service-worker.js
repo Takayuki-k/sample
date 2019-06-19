@@ -1,26 +1,27 @@
 const CACHE_NAME = 'cache-v1';
 const urlsToCache = [
-    'index.html',
-    'about.html',
-    'contact.html',
-    'css/style.css',
-    '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
-    'img/cafe--coffe01.jpg',
-    'img/cafe--coffe02.jpg',
-    'img/cafe--coffe03.jpg',
-    'img/cafe--coffe04.jpg',
-    'img/cafe--farmer01.jpg',
-    '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-    '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
-    '//stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js',
-    'js/index.js'
+    '/',
+    '/index.html',
+    '/about.html',
+    '/contact.html',
+    '/css/style.css',
+    '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+    '/img/cafe--coffe01.jpg',
+    '/img/cafe--coffe02.jpg',
+    '/img/cafe--coffe03.jpg',
+    '/img/cafe--coffe04.jpg',
+    '/img/cafe--farmer01.jpg',
+    '//code.jquery.com/jquery-3.3.1.slim.min.js',
+    '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
+    '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
+    '/js/index.js'
 ];
 
 // install-event
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then((cache) => {
+            .then(function(cache) {
                 console.log('Opened cache');
 
                   // 指定されたリソースをキャッシュに追加する
@@ -30,12 +31,12 @@ self.addEventListener('install', (event) => {
 });
 
 // activate-event
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', function(event) {
     var cacheWhitelist = [CACHE_NAME];
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
+        caches.keys().then(function(cacheNames) {
             return Promise.all(
-                cacheNames.map((cacheName) => {
+                cacheNames.map(function(cacheName) {
                     // ホワイトリストにないキャッシュ(古いキャッシュ)は削除する
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
                         return caches.delete(cacheName);
@@ -47,10 +48,10 @@ self.addEventListener('activate', (event) => {
 });
 
 // fetch-event
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', function(event) {
     event.respondWith(
         caches.match(event.request)
-            .then((response) => {
+            .then(function(response) {
                 if (response) {
                     return response;
                 }
@@ -61,7 +62,7 @@ self.addEventListener('fetch', (event) => {
                 let fetchRequest = event.request.clone();
 
                 return fetch(fetchRequest)
-                    .then((response) => {
+                    .then(function(response) {
                         if (!response || response.status !== 200 || response.type !== 'basic') {
                             return response;
                         }
@@ -72,7 +73,7 @@ self.addEventListener('fetch', (event) => {
                         let responseToCache = response.clone();
 
                         caches.open(CACHE_NAME)
-                                .then((cache) => {
+                                .then(function(cache) {
                                     cache.put(event.request, responseToCache);
                                 });
 
