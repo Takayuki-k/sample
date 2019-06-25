@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "ポートフォリオ3",
   "short_name": "ポートフォリオ3",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "background_color": "#fc980c",
   "icons": [{
     "src": "\/\/placehold.jp\/ff0000\/ffffff\/256x256.png?text=TK",
@@ -15,6 +15,6 @@
   }],
   "theme_color": "#00f",
   "start_url": "./?utm_source=homescreen",
-  "display": "standalone",
+  "display": "browser",
   "gcm_sender_id": "pwa-test-937e4"
 }
