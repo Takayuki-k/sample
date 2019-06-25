@@ -15,6 +15,6 @@
   }],
   "theme_color": "#00f",
   "start_url": "./?utm_source=homescreen",
-  "display": "standalone",
+  "display": "browser",
   "gcm_sender_id": "pwa-test-937e4"
 }
