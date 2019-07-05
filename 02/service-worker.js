@@ -18,10 +18,10 @@ const urlsToCache = [
 ];
 
 // install-event
-self.addEventListener('install', function(event) {
+self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(function(cache) {
+            .then((cache) => {
                 console.log('Opened cache');
 
                   // 指定されたリソースをキャッシュに追加する
@@ -31,12 +31,12 @@ self.addEventListener('install', function(event) {
 });
 
 // activate-event
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', (event) => {
     var cacheWhitelist = [CACHE_NAME];
     event.waitUntil(
-        caches.keys().then(function(cacheNames) {
+        caches.keys().then((cacheNames) => {
             return Promise.all(
-                cacheNames.map(function(cacheName) {
+                cacheNames.map((cacheName) => {
                     // ホワイトリストにないキャッシュ(古いキャッシュ)は削除する
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
                         return caches.delete(cacheName);
@@ -48,10 +48,10 @@ self.addEventListener('activate', function(event) {
 });
 
 // fetch-event
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
-            .then(function(response) {
+            .then((response) => {
                 if (response) {
                     return response;
                 }
@@ -62,7 +62,7 @@ self.addEventListener('fetch', function(event) {
                 let fetchRequest = event.request.clone();
 
                 return fetch(fetchRequest)
-                    .then(function(response) {
+                    .then((response) => {
                         if (!response || response.status !== 200 || response.type !== 'basic') {
                             return response;
                         }
@@ -73,7 +73,7 @@ self.addEventListener('fetch', function(event) {
                         let responseToCache = response.clone();
 
                         caches.open(CACHE_NAME)
-                                .then(function(cache) {
+                                .then((cache) => {
                                     cache.put(event.request, responseToCache);
                                 });
 
@@ -84,4 +84,4 @@ self.addEventListener('fetch', function(event) {
 });
 
 // 現状では、この処理を書かないとService Workerが有効と判定されないようです
-self.addEventListener('fetch', function(event) {});
+self.addEventListener('fetch', (event) => {});
