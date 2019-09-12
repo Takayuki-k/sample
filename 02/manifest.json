@@ -2,7 +2,8 @@
   "manifest_version": 2,
   "name": "ポートフォリオ2",
   "short_name": "ポートフォリオ2",
-  "version": "1.0.4",
+  "description": "ポートフォリオ2",
+  "version": "1.0.5",
   "background_color": "#fc980c",
   "icons": [{
     "src": "//placehold.jp/ff0000/ffffff/256x256.png?text=TK",
@@ -14,7 +15,7 @@
     "type": "image/png"
   }],
   "theme_color": "#00f",
-  "start_url": "https://takayuki-k.github.io/sample/02/",
-  "display": "minimal-ui",
+  "start_url": "./",
+  "display": "browser",
   "gcm_sender_id": "pwa-test-937e4"
 }
