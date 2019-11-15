@@ -150,12 +150,12 @@ main {
 #history {
   position: relative;
   min-height: 30vh;
-  margin: 2em auto;
+  margin: 4.5em auto;
 }
   #history h2 {
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 10%;
     transform: translate( -10%, -50%);
   }
   #history table {
