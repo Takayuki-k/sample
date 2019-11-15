@@ -155,13 +155,23 @@ main {
   #history h2 {
     position: absolute;
     top: 50%;
-    right: 10%;
-    transform: translate( -50%, -50%);
+    right: 5%;
+    transform: translate( -10%, -50%);
   }
   #history table {
     position: absolute;
     top: 50%;
-    transform: translate( 100%, -50%);
+    left: 5%;
+    transform: translate( 10%, -50%);
+  }
+    /* rwd */
+  @media only screen and (max-width : 1024px) {
+    #history h2 {
+      right: 10%;
+    }
+    #history table {
+      left: 10%;
+    }
   }
 
 
