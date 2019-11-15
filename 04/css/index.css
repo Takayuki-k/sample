@@ -267,6 +267,8 @@ footer {}
   outline: 0;
 }
 
-.scroll-top:hover {
+.scroll-top:hover,
+.scroll-top:active {
   background: #6ac77a;
+  outline: 0;
 }
