@@ -1,2 +1,3 @@
-document.cookie = 'same-site-cookie=foo; SameSite=Lax';
-document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
+import Cookies from 'js-cookie'
+
+Cookies.set('name', 'value', { samesite: 'lax' })
