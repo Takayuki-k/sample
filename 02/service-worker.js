@@ -89,7 +89,7 @@ self.addEventListener('fetch', event => {
         return response;
       }
 
-      return caches.match("onoffline.html");
+      return caches.match("onoffline.html")
       .then(responseNodata => {
         return responseNodata;
       });
