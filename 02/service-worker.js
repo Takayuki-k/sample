@@ -1,8 +1,8 @@
-const CACHE_NAME = 'cache-v2';
-const CACHE_KEYS = [
+let CACHE_NAME = 'cache-v2';
+let CACHE_KEYS = [
   CACHE_NAME
 ];
-const urlsToCache = [
+let urlsToCache = [
   '/',
   '/index.html',
   '/about.html',
