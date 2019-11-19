@@ -27,7 +27,8 @@ self.addEventListener('install', event => {
         console.log('Opened cache')
 
         // 指定されたリソースをキャッシュに追加する
-        return cache.addAll(urlsToCache)
+        // return cache.addAll(urlsToCache)
+        return cache.addAll(urlsToCache.map(url => new Request(url, {credentials: 'same-origin'})));
       })
   )
 });
