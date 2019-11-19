@@ -23,12 +23,12 @@ let urlsToCache = [
 // install-event
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-        console.log('Opened cache');
+    caches.open(CACHE_NAME).then(cache => {
+        console.log('Opened cache')
 
         // 指定されたリソースをキャッシュに追加する
         // return cache.addAll(urlsToCache)
-        return cache.addAll(urlsToCache.map(url => new Request(url, {credentials: 'same-origin'})));
+        return cache.addAll(urlsToCache.map((url) => new Request(url, {credentials: 'same-origin'})))
       })
   )
 });
@@ -39,9 +39,9 @@ self.addEventListener('activate', event => {
     caches.keys().then( key => {
       return Promise.all(
         keys.filter(keys => {
-          return !CACHE_KEYS.includes(key);
+          return !CACHE_KEYS.includes(key)
         }).map(keys => {
-          return caches.delete(key);
+          return caches.delete(key)
         })
       );
     })
@@ -50,50 +50,50 @@ self.addEventListener('activate', event => {
 
 // fetch-event
 self.addEventListener('fetch', event => {
-  let online = navigator.online;
+  let online = navigator.online
 
   if (online) {
 
   event.respondWith(
-    caches.match(event.request).then((response) => {
+    caches.match(event.request).then(response => {
       if (response) {
-        return response;
+        return response
       }
 
       // let fetchRequest = event.request.clone()
 
-      return fetch(event.request).then((response) => {
-        cloneResponse = response.clone();
+      return fetch(event.request).then(response => {
+        cloneResponse = response.clone()
 
         if (response) {
           if (response || response.status == 200) {
             caches.open(CACHE_NAME).then(cache => {
               cache.put(event.request, cloneResponse).then(function(){
 
-              });
-            });
+              })
+            })
           }else{
-            return response;
+            return response
           }
-          return response;
+          return response
         }
       }).catch(err => {
-        return console.log(err);
-      });
+        return console.log(err)
+      })
     })
-  );
+  )
 }else {
   event.respondWith(
     caches.match(event.request).then(response => {
       if (response) {
-        return response;
+        return response
       }
 
       return caches.match("onoffline.html")
       .then(responseNodata => {
-        return responseNodata;
-      });
+        return responseNodata
+      })
 
     })
   )
-}});
+}})
