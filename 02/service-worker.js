@@ -24,7 +24,7 @@ let urlsToCache = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-        console.log('Opened cache')
+        console.log('Opened cache');
 
         // 指定されたリソースをキャッシュに追加する
         // return cache.addAll(urlsToCache)
@@ -41,7 +41,7 @@ self.addEventListener('activate', event => {
         keys.filter(keys => {
           return !CACHE_KEYS.includes(key);
         }).map(keys => {
-          return caches.delete(key)
+          return caches.delete(key);
         })
       );
     })
@@ -57,7 +57,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then((response) => {
       if (response) {
-        return response
+        return response;
       }
 
       // let fetchRequest = event.request.clone()
@@ -89,9 +89,9 @@ self.addEventListener('fetch', event => {
         return response;
       }
 
-      return caches.match("onoffline.html")
+      return caches.match("onoffline.html");
       .then(responseNodata => {
-        return responseNodata
+        return responseNodata;
       });
 
     })
