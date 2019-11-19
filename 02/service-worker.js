@@ -1,4 +1,7 @@
 const CACHE_NAME = 'cache-v2'
+const CACHE_KEYS = [
+  CACHE_NAME
+];
 const urlsToCache = [
   '/',
   '/index.html',
@@ -14,74 +17,85 @@ const urlsToCache = [
   '//code.jquery.com/jquery-3.3.1.slim.min.js',
   '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
   '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
-  '/js/index.js'
-]
+  '/js/index.js',
+  '//placehold.jp/30/ff9100/000000/64x64.jpg?text=TK',
+  '//placehold.jp/30/ff9100/000000/180x160.jpg?text=TK',
+  '//placehold.jp/30/ff9100/000000/64x64.jpg?text=TK'
+];
 
 // install-event
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
+    caches.open(CACHE_NAME).then((cache) => {
         console.log('Opened cache')
 
         // 指定されたリソースをキャッシュに追加する
         return cache.addAll(urlsToCache)
       })
   )
-})
+});
 
 // activate-event
-self.addEventListener('activate', (event) => {
-  var cacheWhitelist = [CACHE_NAME]
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
+    caches.keys().then( key => {
       return Promise.all(
-        cacheNames.map((cacheName) => {
-        // ホワイトリストにないキャッシュ(古いキャッシュ)は削除する
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName)
-          }
+        keys.filter(keys => {
+          return !CACHE_KEYS.includes(key);
+        }).map(keys => {
+          return caches.delete(key)
         })
-      )
+      );
     })
-  )
-})
+  );
+});
 
 // fetch-event
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
+  let online = navigator.online;
+
+  if (online) {
+
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response
+      }
+
+      // let fetchRequest = event.request.clone()
+
+      return fetch(event.request).then((response) => {
+        cloneResponse = response.clone();
+
         if (response) {
-          return response
+          if (response || response.status == 200) {
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, cloneResponse).then(function(){
+
+              });
+            });
+          }else{
+            return response;
+          }
+          return response;
         }
+      }).catch(err => {
+        return console.log(err);
+      });
+    })
+  );
+}else {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      if (response) {
+        return response;
+      }
 
-        // 重要：リクエストを clone する。リクエストは Stream なので
-        // 一度しか処理できない。ここではキャッシュ用、fetch 用と2回
-        // 必要なので、リクエストは clone しないといけない
-        let fetchRequest = event.request.clone()
+      return caches.match("onoffline.html")
+      .then(responseNodata => {
+        return responseNodata
+      });
 
-        return fetch(fetchRequest)
-          .then((response) => {
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response
-            }
-
-            // 重要：レスポンスを clone する。レスポンスは Stream で
-            // ブラウザ用とキャッシュ用の2回必要。なので clone して
-            // 2つの Stream があるようにする
-            let responseToCache = response.clone()
-
-            caches.open(CACHE_NAME)
-              .then((cache) => {
-                cache.put(event.request, responseToCache)
-              })
-
-            return response
-          })
-      })
+    })
   )
-})
-
-// 現状では、この処理を書かないとService Workerが有効と判定されないようです
-self.addEventListener('fetch', () => {})
+}});

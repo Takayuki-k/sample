@@ -16,6 +16,6 @@
   }],
   "theme_color": "#00f",
   "start_url": "./",
-  "display": "browser",
+  "display": "standalone",
   "gcm_sender_id": "pwa-test-937e4"
 }
