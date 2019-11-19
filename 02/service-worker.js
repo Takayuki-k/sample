@@ -17,10 +17,7 @@ const urlsToCache = [
   '//code.jquery.com/jquery-3.3.1.slim.min.js',
   '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
   '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
-  '/js/index.js',
-  '//placehold.jp/30/ff9100/000000/64x64.jpg?text=TK',
-  '//placehold.jp/30/ff9100/000000/180x160.jpg?text=TK',
-  '//placehold.jp/30/ff9100/000000/64x64.jpg?text=TK'
+  '/js/index.js'
 ];
 
 // install-event
