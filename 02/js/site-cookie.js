@@ -1,3 +1,3 @@
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
-Cookies.set('name', 'value', { samesite: 'lax' })
+Cookies.set('name', 'value', { samesite: 'lax' });
