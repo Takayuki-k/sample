@@ -1,13 +1,10 @@
 // service workerが有効なら、service-worker.js を登録します
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js')
-  .then(function(registration) {
-    if (typeof registration.update == 'function') {
-      registration.update();
-    }
-  })
+window.addEventListener('load', function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+  }
   .catch(function(error) {
     // statements
     console.log("EROOR: " + error);
   });
-}
+});
