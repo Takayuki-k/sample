@@ -1,4 +1,4 @@
-'use strict';
+'use NONE';
 
 let CACHE_NAME = 'cache-v1';
 let urlsToCache = [
