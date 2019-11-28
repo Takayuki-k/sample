@@ -1,4 +1,7 @@
 'use NONE';
+SameSite = Strict;
+secure;
+httpsonly;
 
 let CACHE_NAME = 'cache-v1';
 let urlsToCache = [
