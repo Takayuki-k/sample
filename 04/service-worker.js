@@ -11,7 +11,7 @@ let urlsToCache = [
   'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js',
   'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js',
   './js/index.js',
-  'js/imagesloaded.pkgd.min.js' ,
+  './js/imagesloaded.pkgd.min.js',
   'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js'
 ];
 
