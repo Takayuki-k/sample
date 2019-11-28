@@ -192,5 +192,27 @@
 <script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="js/index.js"></script>
-</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyABu8F1Kw_tHPoaPwOPeVj0m83vwl9SWGE",
+    authDomain: "pwa-test-3-f6312.firebaseapp.com",
+    databaseURL: "https://pwa-test-3-f6312.firebaseio.com",
+    projectId: "pwa-test-3-f6312",
+    storageBucket: "pwa-test-3-f6312.appspot.com",
+    messagingSenderId: "599042904245",
+    appId: "1:599042904245:web:62bfd7e87e983cb9cceefc",
+    measurementId: "G-8JNHEBS6T3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script></body>
 </html>
