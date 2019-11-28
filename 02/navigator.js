@@ -8,6 +8,6 @@ if ('serviceWorker' in navigator) {
   })
   .catch(function(error) {
     // statements
-    console.log(#EROOR: "" + error);
+    console.log("EROOR: " + error);
   });
 }
