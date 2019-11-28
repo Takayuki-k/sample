@@ -3,7 +3,7 @@ SameSite = Strict;
 secure;
 httpsonly;
 
-let CACHE_NAME = 'cache-v1';
+let CACHE_NAME = 'cache-v2';
 let urlsToCache = [
   './',
   './index.html',
