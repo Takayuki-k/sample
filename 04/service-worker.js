@@ -1,6 +1,6 @@
 // https://qiita.com/OMOIKANESAN/items/5b23fa8ea9ea0d181df5
 
-let CACHE_NAME = 'cache-v4';
+let CACHE_NAME = 'cache-v5';
 let urlsToCache = [
   './',
   './index.html',
@@ -16,10 +16,10 @@ let urlsToCache = [
 ];
 
 // install-event
-self.addEventListener('install', function(event) {
+self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(function(cache) {
+      .then((cache) => {
         console.log('Opened cache');
 
         // 指定されたリソースをキャッシュに追加する
@@ -28,11 +28,28 @@ self.addEventListener('install', function(event) {
   );
 });
 
+// active-event
+self.addEventListener('activate', (event) => {
+  let cacheWhitelist = [CACHE_NAME];
+
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
 // fetch-event
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
+      .then((response) => {
         if (response) {
           return response;
         }
