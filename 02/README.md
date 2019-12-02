@@ -17,3 +17,14 @@ PWAテスト中
 
 ### 2019/10/16  
 google APIの設定ミスにより、オフライン表示もできなくなりました...  
+
+### 2019/12/02  
+cacheの保存可能、アンドロイドでホーム画面に追加に通知確認。  
+アンドロイドで機内モードは可能。  
+ただし、PCでの機内モードは不可。  
+
+また、  
+```
+A cookie associated with a cross-site resource at http://www.cloudflare.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.
+```
+のメッセージが出現(Chrome使用)  
