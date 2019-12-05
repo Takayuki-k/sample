@@ -72,4 +72,4 @@ $(function(){
 
 });
 
-document.cookie = "key=.form__label; path=/; domain:github.com; max-age=0; secure; samesite=strict;";
+document.cookie = "key=.form__label; path=/; domain:github.com; max-age=0; secure; samesite=none;";
