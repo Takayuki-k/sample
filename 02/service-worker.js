@@ -1,6 +1,6 @@
 // https://qiita.com/OMOIKANESAN/items/5b23fa8ea9ea0d181df5
 
-let CACHE_NAME = 'cache-v8';
+let CACHE_NAME = 'cache-v9';
 let urlsToCache = [
   './',
   './index.html',
