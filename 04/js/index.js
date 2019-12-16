@@ -7,7 +7,7 @@ $(function(){
   $(window).scroll(function() {
     let $scroll = $(this).scrollTop();
     let posR = "right " + $scroll * 1.5 + "px";
-    let posL = "left " + $scroll * 1.8 + "px";
+    let posL = "left " + $scroll * 2.0 + "px";
     let bg_position = posR + " , " + posL;
     // bodyのcssに反映
     $('body').css({ "background-position": bg_position});
