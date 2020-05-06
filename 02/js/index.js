@@ -13,7 +13,7 @@ $(function(){
       $('#name').text("名前："+$name);
 
       let $email = $('input[name="email"]').val();
-      if ($email) { $('#email').text("E-mail:"+$email) };
+      if ($email) { $('#email').text("E-mail："+$email) };
 
       let $area = $('[name="area"] option:selected').val();
       if ($area) { $('#area').text("地域："+$area) };
