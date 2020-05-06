@@ -26,7 +26,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// active-event
+// active
 self.addEventListener('activate', (event) => {
   let cacheWhitelist = [CACHE_NAME];
 
