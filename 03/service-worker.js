@@ -1,4 +1,4 @@
-let CACHE_NAME = 'takayuki-k-sample-03-cache-v6';
+let CACHE_NAME = 'takaKsample03-cache-v7';
 let urlsToCache = [
   './',
   './index.html',
