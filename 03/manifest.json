@@ -1,7 +1,7 @@
 {
-  "name": "ポートフォリオ3",
-  "short_name": "ポートフォリオ3",
-  "version": "1.0.7",
+  "name": "ポートフォリオ03",
+  "short_name": "ポートフォリオ03",
+  "version": "1.0.8",
   "background_color": "#fc980c",
   "icons": [{
     "src": "\/\/placehold.jp\/ff0000\/ffffff\/256x256.png?text=TK",
@@ -15,5 +15,5 @@
   "theme_color": "#00f",
   "start_url": "./",
   "display": "standalone",
-  "gcm_sender_id": "pwa-test-2-34125"
+  "gcm_sender_id": "pwa-test-937e4"
 }

@@ -2,6 +2,7 @@
 
 ## URL
 [https://takayuki-k.github.io/sample/03/](https://takayuki-k.github.io/sample/03/)  
+![QR](./readMeImg/GR.jpg)  
 
 ## 説明
 html/cssのポートフォリオです。  
@@ -19,3 +20,8 @@ cacheの保存可能、アンドロイドでホーム画面に追加に通知確
 
 ### 2019/12/08  
 PC-Chromeで機内モードが不可能に（）  
+
+### 2020/05/06
+
+
+![index](./readMeImg/index-01.jpg)
