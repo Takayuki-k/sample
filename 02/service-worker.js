@@ -1,4 +1,4 @@
-let CACHE_NAME = 'sample02-cache11';
+let CACHE_NAME = 'cache-v11';
 let urlsToCache = [
   './',
   './index.html',
