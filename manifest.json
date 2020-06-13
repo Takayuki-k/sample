@@ -1,0 +1,20 @@
+{
+  "name": "ポートフォリオ",
+  "short_name": "ポートフォリオ",
+  "description": "ポートフォリオ",
+  "version": "1.2.0",
+  "background_color": "#fc980c",
+  "icons": [{
+    "src": "https://placehold.jp/ff0000/ffffff/256x256.png?text=TK",
+    "sizes": "256x256",
+    "type": "image/png"
+  },{
+    "src": "https://placehold.jp/ff0000/ffffff/192x192.png?text=TK",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "theme_color": "#00f",
+  "start_url": "./",
+  "display": "standalone",
+  "gcm_sender_id": "pwa-test-937e4"
+}
