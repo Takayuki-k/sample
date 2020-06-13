@@ -3,7 +3,7 @@
 ## URL
 [https://takayuki-k.github.io/sample/02/](https://takayuki-k.github.io/sample/02/)  
   
-![QR](./readmeImg/QR.jpg)
+![QR](./readMeImg/QR.jpg)
 
 ## 説明
 html/css/jQueryのポートフォリオです。  
@@ -44,11 +44,11 @@ PC-Chromeで機内モードが不可能に（）
 `//github.com/~`  から  ``https://github.com/~``  
 に変更しました。  
 
-![index-01](./readmeImg/index-01.jpg)
+![index-01](./readMeImg/index-01.jpg)
   
-![about-01](./readmeImg/about-01.jpg)
+![about-01](./readMeImg/about-01.jpg)
   
-![contact-01](./readmeImg/contact-01.jpg)
+![contact-01](./readMeImg/contact-01.jpg)
   
-![contact-02](./readmeImg/contact-02.jpg)
+![contact-02](./readMeImg/contact-02.jpg)
   
